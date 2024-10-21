@@ -1,0 +1,42 @@
+<div class="bg-dark" style="margin-top: -80px;">
+    <div class="container panel-user">
+        <div class="photo-user pt-4 pb-4 d-flex align-items-center justify-content-between">
+            <img src="assets/photo-user.png" alt="User Photo" class="user-photo">
+            <a style="color: aliceblue;" (click)="logout()">
+                <span class="bell-notification"><i class="fa-solid fa-right-from-bracket"></i></span>
+            </a>
+        </div>
+        <div class="welcome-user">
+            BEM-VINDO, {{ userName }}
+        </div>
+        <div class="divider"></div>
+    </div>
+    <div id="container">
+        <div id="slider-container">
+            <span onclick="slideRight()" class="btn-slider"></span>
+            <div id="slider">
+                <div class="slide">
+                    <div>Horas Extras</div>
+                    <div>00h00m</div>
+                </div>
+                <div class="slide">
+                    <div>Feriados do Mês</div>
+                    <div>01</div>
+                </div>
+                <div class="slide">
+                    <div>Férias</div>
+                    <div>0</div>
+                </div>
+                <div class="slide">
+                    <div>Banco de Horas</div>
+                    <div>00H00m</div>
+                </div>
+            </div>
+            <span onclick="slideLeft()" class="btn-slider"></span>
+        </div>
+    </div>
+    <div *ngIf="user.admin" class="p-2 d-flex justify-content-center">
+        <button class="btn btn-sm btn-danger" (click)="redirectAdmin()">Área Admin</button>
+    </div>
+</div>
+

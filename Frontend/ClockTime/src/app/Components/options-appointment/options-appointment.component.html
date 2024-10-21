@@ -1,0 +1,39 @@
+<app-menu-mobile-back pageTitle="Marcação de Ponto"></app-menu-mobile-back>
+
+<div class="container" *ngIf="!isLoading">
+    <div class="row d-flex justify-content-center align-items-center h-100 card-options mt-5">
+        <div class="card rounded shadow-sm col-10 col-md-6 col-lg-6 p-3">
+            <div class="alert alert-danger" role="alert" *ngIf="!uploadedPhotos">
+                Você ainda não realizou o upload das Fotos necessários para utilizar o serviços de Ponto Eletrônico.
+                <hr>
+                Para realizar o upload entre em Perfil
+            </div>
+            <p class="text-center font-weight-bolder">Escolha como marcar seu ponto: </p>
+            <div class="btn-container">
+                <a type="button" class="btn btn-success btn-rounded" (click)="call_entry()">
+                    <span class="btn-text">Entrada</span>
+                    <i class="btn-icon fa-solid fa-right-to-bracket"></i>
+                </a>
+
+                <a type="button" class="btn btn-danger btn-rounded" (click)="call_out_time()">
+                    <span class="btn-text">Saída</span>
+                    <i class="btn-icon fa-solid fa-right-from-bracket"></i>
+                </a>
+
+                <a href="/camera" type="button" class="btn btn-primary btn-rounded">
+                    <span class="btn-text">Horário de Almoço</span>
+                    <i class="btn-icon fa-solid fa-circle-pause"></i>
+                </a>
+
+                <a href="/camera" type="button" class="btn btn-warning btn-rounded" style="color:#FFF;">
+                    <span class="btn-text">Retorno do Almoço</span>
+                    <i class="btn-icon fa-solid fa-arrow-rotate-left"></i>
+                </a>
+               
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="isLoading">
+    <p>Carregando...</p>
+</div>

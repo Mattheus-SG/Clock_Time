@@ -1,0 +1,32 @@
+<div class="">
+    <table class="table table-striped mt-2">
+        <thead class="thead-dark">
+            <tr class="text-center">
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody *ngIf="all_users">
+            <tr *ngFor="let item of all_users; let i = index;" class="text-center">
+                <td>{{ item.userName }}</td>
+                <td>{{ item.email }}</td>
+                <td>
+                    <!-- <button class="btn btn-warning btn-sm mr-2" tooltip="Edit" (click)="open_info_modal(i)">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </button> -->
+                    <button class="btn btn-warning btn-sm mr-2" tooltip="Edit" (click)=" get_appointments_user(item.id)">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot *ngIf="all_users.length < 1">
+            <tr>
+                <td colspan="8" class="text-center">
+                    <h4>Sem Usuários.</h4>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

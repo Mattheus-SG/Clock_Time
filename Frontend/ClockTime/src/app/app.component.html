@@ -1,0 +1,12 @@
+
+<div *ngIf="isMobile">
+  <app-menu-mobile></app-menu-mobile>
+</div>
+
+<div *ngIf="!isMobile">
+  <app-menu-desktop></app-menu-desktop>
+</div>
+
+<div style="padding-top: 65px; padding-bottom: 75px;">
+  <router-outlet></router-outlet>
+</div>

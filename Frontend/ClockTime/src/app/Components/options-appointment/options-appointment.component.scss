@@ -1,0 +1,32 @@
+.card-options{
+    // height: 600px;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os botões horizontalmente */
+    gap: 10px; /* Espaço entre os botões */
+}
+.btn-rounded {
+    display: flex;
+    justify-content: space-between; /* Espaça o texto e o ícone */
+    align-items: center; /* Alinha verticalmente o texto e o ícone */
+    width: 100%;
+    // max-width: 400px; /* Define a largura máxima dos botões */
+    font-size: 16px; /* Ajusta o tamanho da fonte do botão */
+    padding: 10px 20px; /* Ajusta o padding do botão */
+}
+.btn-rounded .btn-text {
+    text-align: left; /* Alinha o texto à esquerda */
+    flex: 1; /* Ocupa o espaço restante */
+}
+.btn-rounded .btn-icon {
+    margin-left: 10px; /* Espaço entre o texto e o ícone */
+}
+@media (max-width: 576px) {
+    .btn-rounded {
+        font-size: 14px; /* Ajusta o tamanho da fonte em dispositivos móveis */
+        padding: 8px 16px; /* Ajusta o padding em dispositivos móveis */
+    }
+}

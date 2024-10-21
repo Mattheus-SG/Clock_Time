@@ -1,0 +1,9 @@
+
+<div class="fixed-top">
+  <header class="mobile-header bg-dark " *ngIf="isMobile">
+    <button class="back-button" (click)="goBack()">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <span class="page-title font-weight-bolder">{{ pageTitle }}</span>
+  </header>
+</div>

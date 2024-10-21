@@ -1,0 +1,46 @@
+
+<header *ngIf="userLogado">
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/home">Clock Time</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+        <ul class="navbar-nav flex-grow-1">
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="/list-appointments">Registros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-sm btn-outline-success" href="/marcar-ponto">Marcar Ponto</a>
+          </li>
+
+          <div *ngIf="!userLogado; then thenBlockEntry else elseBlockEntry"></div>
+            <ng-template #thenBlockEntry>
+              <li class="nav-item ml-auto">
+                <a class="nav-link" href="/login"role="button" aria-haspopup="true" aria-expanded="false">
+                  LOGIN
+                </a>
+              </li>
+            </ng-template>
+            <ng-template #elseBlockEntry>
+              <li class="nav-item dropdown ml-auto">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  {{ userLogado.name }}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/profile">Profile</a>
+                  <a class="dropdown-item" (click)="logout()">Sair</a>
+                </div>
+              </li>
+            </ng-template>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

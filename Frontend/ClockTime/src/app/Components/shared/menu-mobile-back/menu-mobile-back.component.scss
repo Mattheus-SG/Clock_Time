@@ -1,0 +1,32 @@
+.mobile-header {
+    display: flex;
+    color: #FFF;
+    align-items: center;
+    justify-content: center; /* Centraliza o título horizontalmente */
+    padding: 10px 15px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ddd;
+    position: relative; /* Necessário para posicionar o botão de volta */
+  }
+  
+  .back-button {
+    position: absolute; /* Posiciona o botão de volta fora do fluxo normal */
+    left: 15px; /* Ajusta a posição do botão de volta */
+    background: none;
+    color: #FFF;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .page-title {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
+  

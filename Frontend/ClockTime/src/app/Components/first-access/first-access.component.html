@@ -1,0 +1,59 @@
+<div class="container full-height mt-5">
+    <div class="row d-flex justify-content-around align-items-center">
+        <form (ngSubmit)="onSubmit()" [formGroup]="form" class="col-10 col-md-6 col-lg-4">
+            <h2 class="login-title">Primeiro Acesso</h2>
+            <div class="form-group">
+              <label for="exampleInputEmail1">E-mail de acesso</label>
+              <input type="email" [(ngModel)]="user.email" name="email" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': f.email.errors && f.email.touched }">
+              <span class="invalid-feedback" *ngIf="f.email.errors?.required">{{ messageFieldRequired }}</span>
+              <span class="invalid-feedback" *ngIf="f.email.errors?.email">Digite um e-mail válido.</span>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Nome de Usuário</label>
+              <input type="text" [(ngModel)]="user.userName" name="userName"  class="form-control" formControlName="userName" [ngClass]="{ 'is-invalid': f.userName.errors && f.userName.touched }">
+              <span class="invalid-feedback" *ngIf="f.userName.errors?.required">{{ messageFieldRequired }}</span>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Senha</label>
+              <input type="password" [(ngModel)]="user.password" name="password"  class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': f.password.errors && f.password.touched }">
+              <span class="invalid-feedback" *ngIf="f.password.errors?.required">{{ messageFieldRequired }}</span>
+              <span class="invalid-feedback" *ngIf="f.password.errors?.minlength">Senha deve ter pelo menos 6 digitos.</span>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Confirmar Senha</label>
+                <input type="password" class="form-control" formControlName="confirmPassword" [ngClass]="{ 'is-invalid': f.confirmPassword.errors && f.confirmPassword.touched }">
+                <span class="invalid-feedback" *ngIf="f.confirmPassword.errors?.required">{{ messageFieldRequired }}</span>
+                <span class="invalid-feedback" *ngIf="f.confirmPassword.errors?.minlength">Senha deve ter pelo menos 6 digitos.</span>
+                <span class="invalid-feedback" *ngIf="f.confirmPassword.errors?.mustMatch">Senhas não são iguals.</span>
+            </div>
+            <div class="form-group form-check text-center" >
+              <input type="checkbox" class="form-check-input" formControlName="terms" [ngClass]="{ 'is-invalid': f.terms.errors && f.terms.touched }">
+              <label class="form-check-label" for="exampleCheck1">Eu li e concordo com os termos de uso.</label>
+              <span class="invalid-feedback" *ngIf="f.terms.errors?.required">{{ messageFieldRequired }}</span>
+            </div>
+            <div *ngIf="errorRegister; then thenBlock"></div>
+            <ng-template  #thenBlock>
+                <div class="text-center text-danger">{{ errorRegister }}</div>
+            </ng-template >
+
+            <div class="form-group btn-container mt-3">
+                <button type="submit" class="btn btn-success" [disabled]="!form.valid">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal -->
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Cadastro Realizado.</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Cadastro Realizado com sucesso.
+    Você já pode acessar e utilizar os serviços.
+  </div>
+</ng-template>
+

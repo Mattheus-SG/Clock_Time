@@ -1,0 +1,28 @@
+
+<app-slider-home userName={{user.userName}}></app-slider-home>
+
+<div class="content-home container">
+    <div class="header-date">
+        <div>Sua Jornada de Hoje: </div>
+        <div class="btn btn-outline-dark">{{ formattedDate }}</div>
+    </div>
+
+<div class="bottons-action">
+    <div class="flex-bottom">
+        <a href="#"><span class="icon-enter"><i class="fa-solid fa-circle-play"></i></span></a>
+        <span class="text-label">Entrada</span>
+        <span class="time" *ngIf="appointment_today.entryTime">{{ appointment_today.entryTime }}</span>
+        <span class="time" *ngIf="!appointment_today.entryTime">--:--</span>
+    </div>
+    <div class="flex-bottom">
+        <a href=""><span class="icon-enter"><i class="fa-solid fa-circle-pause"></i></span></a>
+        <span class="text-label">Saída</span>
+        <span class="time" *ngIf="appointment_today.outTime">{{ appointment_today.outTime }}</span>
+        <span class="time" *ngIf="!appointment_today.outTime">--:--</span>
+    </div>
+    <!-- <div class="flex-bottom">
+        <a href=""><span class="icon-enter"><i class="fa-solid fa-circle-play"></i></span></a>  
+        <span class="text-label">Entrada</span>
+        <span class="time">08:30</span>
+    </div> -->
+</div>

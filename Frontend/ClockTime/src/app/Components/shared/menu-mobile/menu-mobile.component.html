@@ -1,0 +1,31 @@
+<nav class="bg-dark fixed-bottom" *ngIf="userLogado">
+    <div class="nav-mobile d-flex justify-content-center align-items-center">
+      <div class="row">
+        <div class="col-3">
+            <a href="home">
+                <div><i class="fa-solid fa-house-chimney fa-lg"></i></div>
+                <div>Home</div>
+            </a>
+        </div>
+        <div class="col-3">
+            <a href="/marcar-ponto">
+                <div><i class="fa-solid fa-pencil fa-lg"></i></div>
+                <div>Marcação</div>
+            </a>
+        </div>
+        <div class="col-3">
+            <a href="/list-appointments">
+                <div><i class="fa-solid fa-calendar-days fa-lg"></i></div>
+                <div>Visualizar</div>
+            </a>
+        </div>
+
+        <div class="col-3">
+            <a href="/profile">
+                <div><i class="fa-solid fa-id-card fa-lg"></i></div>
+                <div>Perfil</div>
+            </a>
+        </div>
+      </div>
+    </div>
+  </nav>

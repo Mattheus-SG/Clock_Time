@@ -1,0 +1,13 @@
+.nav-mobile{
+    height: 60px;
+    color: aliceblue;
+}
+
+.nav-mobile .col-3 a {
+    // color: wheat;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }

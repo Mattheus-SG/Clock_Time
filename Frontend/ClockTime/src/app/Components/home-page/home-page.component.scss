@@ -1,0 +1,24 @@
+
+
+
+.flex-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Alinha o tempo à direita */
+    padding: 10px;
+    font-size: 22px;
+}
+
+.icon-enter {
+    color: green;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.text-label {
+    margin-right: auto; /* Coloca um espaçamento flexível entre o texto e o tempo */
+}
+
+.time {
+    margin-left: auto; /* Garante que o tempo seja alinhado à direita */
+}
